@@ -3,10 +3,6 @@
 
 Uma simples classe para trabalhar com XML no PHP
 
-### Highlights
-
-- Added xml_encode function
-
 ## Installation
 
 Router is available via Composer:
