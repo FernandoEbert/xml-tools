@@ -1,0 +1,19 @@
+{
+    "name": "fernandoebert/xml",
+    "description": "Uma siples classe para resolver XML",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+      {
+        "name": "Fernando Ebert",
+        "email": "fernando.passos482@gmail.com",
+        "role": "Developer",
+        "homepage": "https://ebertsystem.com"
+      }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Fernandoebert\\XmlTools\\": "src"
+      }
+    }
+  }
