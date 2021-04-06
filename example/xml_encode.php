@@ -19,4 +19,3 @@ $example = [
 
 $xml = xml::xml_encode($example);
 echo $xml;
-var_dump(xml::xml_decode($xml));
