@@ -12,13 +12,13 @@ Uma simples classe para trabalhar com XML no PHP
 Router is available via Composer:
 
 ```bash
-"fernandoebert/xml": "1.0.*"
+"fernandoebert/xml-tools": "1.0.*"
 ```
 
 or run
 
 ```bash
-composer require fernandoebert/xml
+composer require fernandoebert/xml-tools
 ```
 
 ## Documentation
