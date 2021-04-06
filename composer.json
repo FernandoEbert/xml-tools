@@ -1,6 +1,6 @@
 {
     "name": "fernandoebert/xml",
-    "description": "Uma siples classe para resolver XML",
+    "description": "Uma simples classe para resolver XML",
     "minimum-stability": "stable",
     "license": "proprietary",
     "authors": [
