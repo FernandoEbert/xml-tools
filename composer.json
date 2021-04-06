@@ -1,6 +1,6 @@
 {
     "name": "fernandoebert/xml-tools",
-    "description": "Uma simples classe para resolver XML",
+    "description": "Uma simples classe para trabalhar com XML no PHP",
     "minimum-stability": "stable",
     "license": "proprietary",
     "authors": [
