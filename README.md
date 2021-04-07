@@ -19,7 +19,7 @@ composer require fernandoebert/xml-tools
 
 ## Documentation
 
-###### For details on how to use the router, see the sample folder with details in the component directory. To use the router you need to redirect your route routing navigation (index.php) where all traffic must be handled. The example below shows how:
+###### For more details on how to use it, see the example folder with details in the component directory.
 
 Para mais detalhes sobre como usar, veja a pasta de exemplo com detalhes no diretório do componente.
 
