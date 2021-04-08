@@ -35,18 +35,18 @@ include __DIR__ . "/../vendor/autoload.php";
 use Fernandoebert\XmlTools\xml;
 
 $example = [
-    "root" => [
-        "key01" => "value01",
-        "key02" => "value02",
-        "key03" => [
-            'subkey01' => [
-                'item01',
-                'item02',
-                'item03',
-                'item04',
-            ]
-        ]
-    ]    
+  "root" => [
+    "key01" => "value01",
+    "key02" => "value02",
+    "key03" => [
+      "subkey01" => [
+        "item01",
+        "item02",
+        "item03",
+        "item04",
+      ]
+    ]
+  ]    
 ];
 
 $xml = xml::xml_encode($example);
@@ -57,14 +57,14 @@ echo $xml;
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-	<key01>value01</key01>
-	<key02>value02</key02>
-	<key03>
-		<subkey01>item01</subkey01>
-		<subkey01>item02</subkey01>
-		<subkey01>item03</subkey01>
-		<subkey01>item04</subkey01>
-	</key03>
+  <key01>value01</key01>
+  <key02>value02</key02>
+  <key03>
+    <subkey01>item01</subkey01>
+    <subkey01>item02</subkey01>
+    <subkey01>item03</subkey01>
+    <subkey01>item04</subkey01>
+  </key03>
 </root>
 ```
 
