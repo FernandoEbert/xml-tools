@@ -56,14 +56,16 @@ echo $xml;
 ##### Result
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<key01>value01</key01>
-<key02>value02</key02>
-<key03>
-	<subkey01>item01</subkey01>
-	<subkey01>item02</subkey01>
-	<subkey01>item03</subkey01>
-	<subkey01>item04</subkey01>
-</key03>
+<root>
+	<key01>value01</key01>
+	<key02>value02</key02>
+	<key03>
+		<subkey01>item01</subkey01>
+		<subkey01>item02</subkey01>
+		<subkey01>item03</subkey01>
+		<subkey01>item04</subkey01>
+	</key03>
+</root>
 ```
 
 ## Support
