@@ -1,6 +1,12 @@
 {
     "name": "fernandoebert/xml-tools",
     "description": "Uma simples classe para trabalhar com XML no PHP",
+    "keywords": [
+        "XML",
+        "xml_encode",
+        "arraytoxml",
+        "array2xml"
+    ],
     "minimum-stability": "stable",
     "license": "proprietary",
     "authors": [
