@@ -50,7 +50,7 @@ $example = [
 $xml = xml::xml_encode($example);
 echo $xml;
 ```
-
+ 
 ##### Result
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
