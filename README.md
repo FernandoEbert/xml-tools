@@ -8,7 +8,7 @@ Uma simples classe para trabalhar com XML no PHP
 xml-tools is available via Composer:
 
 ```bash
-"fernandoebert/xml-tools": "1.0.*"
+"fernandoebert/xml-tools": "2.*"
 ```
 
 or run
