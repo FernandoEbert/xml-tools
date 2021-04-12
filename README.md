@@ -37,13 +37,13 @@ $example = [
      "key01" => "value01",
      "key02" => "value02",
      "key03" => [
-     "subkey01" => [
-       "item01",
-       "item02",
-       "item03",
-       "item04",
-      ]
-    ]
+       "subkey01" => [
+         "item01",
+         "item02",
+         "item03",
+         "item04"
+       ]
+     ]
   ]
 ];
 
