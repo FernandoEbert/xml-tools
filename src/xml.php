@@ -62,5 +62,11 @@ class xml
 
         }
     }
+
+    static function xml_decode(string $xml, $assoc = false)
+    {
+        $xmlObject = simplexml_load_string($xml);
+        return json_decode(json_encode($xmlObject), $assoc);
+    }
     
 }

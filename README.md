@@ -5,7 +5,7 @@ Uma simples classe para trabalhar com XML no PHP
 
 ## Installation
 
-Xml Tools is available via Composer:
+xml-tools is available via Composer:
 
 ```bash
 "fernandoebert/xml-tools": "1.0.*"
@@ -23,8 +23,6 @@ composer require fernandoebert/xml-tools
 
 Para mais detalhes sobre como usar, veja a pasta de exemplo com detalhes no diretório do componente.
 
-
-
 ##### xml_encode
 
 ```php
@@ -35,18 +33,18 @@ include __DIR__ . "/../vendor/autoload.php";
 use Fernandoebert\XmlTools\xml;
 
 $example = [
-  "root" => [
-    "key01" => "value01",
-    "key02" => "value02",
-    "key03" => [
-      "subkey01" => [
-        "item01",
-        "item02",
-        "item03",
-        "item04",
-      ]
-    ]
-  ]    
+	"root" => [
+		"key01" => "value01",
+		"key02" => "value02",
+		"key03" => [
+			'subkey01' => [
+					'item01',
+					'item02',
+					'item03',
+					'item04',
+			]
+		]
+	]
 ];
 
 $xml = xml::xml_encode($example);
@@ -57,15 +55,86 @@ echo $xml;
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-  <key01>value01</key01>
-  <key02>value02</key02>
-  <key03>
-    <subkey01>item01</subkey01>
-    <subkey01>item02</subkey01>
-    <subkey01>item03</subkey01>
-    <subkey01>item04</subkey01>
-  </key03>
+	<key01>value01</key01>
+	<key02>value02</key02>
+	<key03>
+		<subkey01>item01</subkey01>
+		<subkey01>item02</subkey01>
+		<subkey01>item03</subkey01>
+		<subkey01>item04</subkey01>
+	</key03>
 </root>
+```
+
+##### xml_decode in OBJ STDCLASS
+
+```php
+<?php
+
+include __DIR__ . "/../vendor/autoload.php";
+
+use Fernandoebert\XmlTools\xml;
+
+$xml = '<?xml version=\"1.0\" encoding=\"UTF-8\"?><root><key01>value01</key01><key02>value02</key02><key03><subkey01>item01</subkey01><subkey01>item02</subkey01><subkey01>item03</subkey01><subkey01>item04</subkey01></key03></root>';
+
+echo "<pre>";
+print_r(xml::xml_decode($xml));
+echo "</pre>";
+```
+
+##### Result
+```PHP
+stdClass Object
+(
+  [key01] => value01
+  [key02] => value02
+  [key03] => stdClass Object
+    (
+      [subkey01] => Array
+        (
+            [0] => item01
+            [1] => item02
+            [2] => item03
+            [3] => item04
+        )
+
+    )
+)
+```
+
+##### xml_decode in ARRAY
+
+```php
+<?php
+
+include __DIR__ . "/../vendor/autoload.php";
+
+use Fernandoebert\XmlTools\xml;
+
+$xml = '<?xml version=\"1.0\" encoding=\"UTF-8\"?><root><key01>value01</key01><key02>value02</key02><key03><subkey01>item01</subkey01><subkey01>item02</subkey01><subkey01>item03</subkey01><subkey01>item04</subkey01></key03></root>';
+
+echo "<pre>";
+print_r(xml::xml_decode($xml, true));
+echo "</pre>";
+```
+
+##### Result
+```PHP
+Array
+(
+  [key01] => value01
+  [key02] => value02
+  [key03] => Array
+    (
+      [subkey01] => Array
+        (
+            [0] => item01
+            [1] => item02
+            [2] => item03
+            [3] => item04
+        )
+    )
+)
 ```
 
 ## Support
