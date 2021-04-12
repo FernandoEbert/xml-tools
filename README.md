@@ -124,7 +124,7 @@ Array
 (
   [key01] => value01
   [key02] => value02
-  [key03] => Array
+  [key03] => Array 
     (
       [subkey01] => Array
         (
