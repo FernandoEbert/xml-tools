@@ -5,7 +5,7 @@ Uma simples classe para trabalhar com XML no PHP
 
 ## Installation
 
-Router is available via Composer:
+Xml Tools is available via Composer:
 
 ```bash
 "fernandoebert/xml-tools": "1.0.*"
