@@ -9,6 +9,9 @@
     ],
     "minimum-stability": "stable",
     "license": "proprietary",
+  "require": {
+    "ext-dom": "*"
+  },
     "authors": [
       {
         "name": "Fernando Ebert",

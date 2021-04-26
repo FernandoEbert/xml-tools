@@ -2,7 +2,6 @@
 
 namespace Fernandoebert\XmlTools;
 use DOMDocument;
-use each;
 
 class xml
 {
