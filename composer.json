@@ -22,7 +22,4 @@
         "Fernandoebert\\XmlTools\\": "src"
       }
     }
-    "require": {
-    "ext-dom": "*"
-  },
 }
