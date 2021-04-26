@@ -1,6 +1,6 @@
 {
     "name": "fernandoebert/xml-tools",
-    "description": "Uma simples classe para trabalhar com XML no PHP",
+    "description": "A simple class for working with XML in PHP",
     "keywords": [
         "XML",
         "xml_encode",
