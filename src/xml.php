@@ -2,9 +2,22 @@
 
 namespace Fernandoebert\XmlTools;
 use DOMDocument;
+use DOMElement;
+use SimpleXMLElement;
 
 class xml
-{
+{    
+    /**
+     * xml_encode
+     *
+     * @param  mixed $mixed
+     * @param  bool $header
+     * @param  DOMElement $domElement
+     * @param  DOMDocument $DOMDocument
+     * @param  string $version
+     * @param  string $encodingType
+     * @return void
+     */
     static function xml_encode($mixed, $header = true, $domElement = null, $DOMDocument = null, $version = "1.0", $encodingType = "UTF-8")
     {
         if(is_null($DOMDocument)){
@@ -13,6 +26,7 @@ class xml
             $DOMDocument->formatOutput = true;
             static::xml_encode($mixed,$header,$DOMDocument,$DOMDocument);
 
+            header("Content-type: text/xml");
             return ($header)? $DOMDocument->saveXML() : $DOMDocument->saveXML($DOMDocument->documentElement); 
             
         } else {
@@ -61,7 +75,14 @@ class xml
 
         }
     }
-
+    
+    /**
+     * xml_decode
+     *
+     * @param  string $xml
+     * @param  bool $assoc
+     * @return void
+     */
     static function xml_decode(string $xml, $assoc = false)
     {
         $xmlObject = simplexml_load_string($xml);
