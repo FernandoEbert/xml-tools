@@ -2,36 +2,45 @@
 
 include __DIR__ . "/../vendor/autoload.php";
 
-use Fernandoebert\XmlTools\xml;
+use Fernandoebert\XmlTools\xmlTools;
 
 // EXAMPLE XML ENCODE
 $example = [
-	"root" => [
-		"key01" => "value01",
-		"key02" => "value02",
-		"key03" => [
-			'subkey01' => [
-					'item01',
-					'item02',
-					'item03',
-					'item04',
-			]
-		]
-	]
+    "root" => [
+        "key01" => [
+            '_value' => "Value Of _value"
+        ],
+        "key02" => [
+            '_cdata' => "Value of CDATA",
+        ],
+        "key03" => [
+            '@attr' => [
+                'key01' => 'ValuesOfAttr01',
+                'key02' => 'valuesOfAttr02',
+                'key03' => 'valuesOfAttr03',
+            ],
+            'subkey01' => [
+                'item01',
+                'item02',
+                'item03',
+                'item04',
+            ]
+        ]
+    ]
 ];
 
-$xml = xml::xml_encode($example);
-echo $xml;
+$xml = xmlTools::xml_encode($example, false);
+//echo $xml;
+
+//#  STDCLASS
+pre(xmlTools::xml_decode($xml));
+//
+//#  ARRAY
+//pre(xmlTools::xml_decode($xml, true));
 
 
-#  STDCLASS
-pre(xml::xml_decode($xml));
-
-#  ARRAY
-pre(xml::xml_decode($xml, true));
-
-
-function pre($mixed){
+function pre($mixed)
+{
     echo "<pre>";
     print_r($mixed);
     echo "</pre>";

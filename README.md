@@ -1,4 +1,4 @@
-# XML @FernandoEbert
+# XmlTools @FernandoEbert
 ###### A simple class for working with XML in PHP
 
 Uma simples classe para trabalhar com XML no PHP
@@ -8,7 +8,7 @@ Uma simples classe para trabalhar com XML no PHP
 xml-tools is available via Composer:
 
 ```bash
-"fernandoebert/xml-tools": "2.*"
+"fernandoebert/xml-tools": "1.*"
 ```
 
 or run
@@ -30,24 +30,34 @@ Para mais detalhes sobre como usar, veja a pasta de exemplo com detalhes no dire
 
 include __DIR__ . "/../vendor/autoload.php";
 
-use Fernandoebert\XmlTools\xml;
+use Fernandoebert\XmlTools\xmlTools;
 
 $example = [
-  "root" => [
-     "key01" => "value01",
-     "key02" => "value02",
-     "key03" => [
-       "subkey01" => [
-         "item01",
-         "item02",
-         "item03",
-         "item04"
-       ]
-     ]
-  ]
+    "root" => [
+        "key01" => [
+            '_value' => "Value Of _value"
+        ],
+        "key02" => [
+            '_cdata' => "Value of CDATA",
+        ],
+        "key03" => [
+            '@attr' => [
+                'key01' => 'ValuesOfAttr01',
+                'key02' => 'valuesOfAttr02',
+                'key03' => 'valuesOfAttr03',
+            ],
+            'subkey01' => [
+                'item01',
+                'item02',
+                'item03',
+                'item04',
+            ]
+        ]
+    ]
 ];
-
-$xml = xml::xml_encode($example);
+// to not use the Content-type header, use the second parameter ($header) as false
+// $xml = xmlTools::xml_encode($example, false);
+$xml = xmlTools::xml_encode($example);
 echo $xml;
 ```
  
@@ -55,14 +65,16 @@ echo $xml;
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-	<key01>value01</key01>
-	<key02>value02</key02>
-	<key03>
-		<subkey01>item01</subkey01>
-		<subkey01>item02</subkey01>
-		<subkey01>item03</subkey01>
-		<subkey01>item04</subkey01>
-	</key03>
+    <key01>Value Of _value</key01>
+    <key02>
+        <![CDATA[ Value of CDATA ]]>
+    </key02>
+    <key03 key01="ValuesOfAttr01" key02="valuesOfAttr02" key03="valuesOfAttr03">
+        <subkey01>item01</subkey01>
+        <subkey01>item02</subkey01>
+        <subkey01>item03</subkey01>
+        <subkey01>item04</subkey01>
+    </key03>
 </root>
 ```
 
@@ -73,12 +85,12 @@ echo $xml;
 
 include __DIR__ . "/../vendor/autoload.php";
 
-use Fernandoebert\XmlTools\xml;
+use Fernandoebert\XmlTools\xmlTools;
 
 $xml = '<?xml version=\"1.0\" encoding=\"UTF-8\"?><root>...</root>';
 
 echo "<pre>";
-print_r(xml::xml_decode($xml));
+print_r(xmlTools::xml_decode($xml));
 echo "</pre>";
 ```
 
@@ -100,6 +112,8 @@ stdClass Object
 
     )
 )
+
+// When the index is numeric, returns an array. Ex: [subkey01]
 ```
 
 ##### xml_decode in ARRAY
@@ -109,12 +123,12 @@ stdClass Object
 
 include __DIR__ . "/../vendor/autoload.php";
 
-use Fernandoebert\XmlTools\xml;
+use Fernandoebert\XmlTools\xmlTools;
 
 $xml = '<?xml version=\"1.0\" encoding=\"UTF-8\"?><root>...</root>';
 
 echo "<pre>";
-print_r(xml::xml_decode($xml, true));
+print_r(xmlTools::xml_decode($xml, true));
 echo "</pre>";
 ```
 

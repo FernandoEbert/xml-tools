@@ -6,19 +6,19 @@
     'aliases' => 
     array (
     ),
-    'reference' => '040537edbc93dfe6623c624520eadb49f5d9297a',
-    'name' => 'fernandoebert/xml',
+    'reference' => '8bde3cda0ee975483fee7544bc243d8229fb4666',
+    'name' => 'fernandoebert/xml-tools',
   ),
   'versions' => 
   array (
-    'fernandoebert/xml' => 
+    'fernandoebert/xml-tools' => 
     array (
       'pretty_version' => 'dev-main',
       'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => '040537edbc93dfe6623c624520eadb49f5d9297a',
+      'reference' => '8bde3cda0ee975483fee7544bc243d8229fb4666',
     ),
   ),
 );
